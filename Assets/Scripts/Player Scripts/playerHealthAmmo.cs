@@ -165,6 +165,7 @@ public class playerHealthAmmo : MonoBehaviour
         if(timePassed >= timeToRecoverHealthAmmo)
         {
             healthAmmo++;
+            healthAmmo++;
 
             if (healthAmmo >= maxHealthAmmo)
             {

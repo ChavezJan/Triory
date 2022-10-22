@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     private bool switchingUp = false;
     private bool switchingDown = false;
 
+    public int floorLevel = 2;
+
     public float moveSpeed;
     public Rigidbody rb;
 
@@ -62,11 +64,13 @@ public class PlayerController : MonoBehaviour
 
     void FaceUp()
     {
+        floorLevel++;
         Transform t = player.transform;
         t.position = new Vector3(t.position.x, t.position.y, t.position.z + spacingInFaces);
     }
     void FaceDown()
     {
+        floorLevel--;
         Transform t = player.transform;
         t.position = new Vector3(t.position.x, t.position.y, t.position.z - spacingInFaces);
     }
@@ -74,6 +78,11 @@ public class PlayerController : MonoBehaviour
     void Move()
     {
         rb.velocity = new Vector2(moveDirection.x * moveSpeed,moveDirection.y * moveSpeed);
+    }
+
+    public int getLevel()
+    {
+        return floorLevel;
     }
 
 }

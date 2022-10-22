@@ -7,6 +7,10 @@ public class EnemySeek : MonoBehaviour
 
     public GameObject target;
     public float enemySpeed = 5f;
+    public float distanceToFollow = 20f;
+    public float distanceToStop = 10f;
+    public bool enemyShoot = false;
+    public int floorLevel = 2;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +21,9 @@ public class EnemySeek : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         MoveSeek();
+        
     }
 
     void MoveSeek()
@@ -25,7 +31,19 @@ public class EnemySeek : MonoBehaviour
         Vector3 targetPos = target.transform.position;
         Vector3 agentPos = transform.position;
         Vector3 distance = targetPos - agentPos;
+        float distanceFloat = Vector3.Distance(targetPos,agentPos);
         Vector3 velocity = distance.normalized * enemySpeed;
-        transform.position += velocity* Time.deltaTime;
+        int playerFloorLevel = target.GetComponent<PlayerController>().getLevel();
+
+        if (distanceToFollow > distanceFloat && distanceFloat > distanceToStop && enemyShoot && floorLevel == playerFloorLevel)
+        {
+            transform.position += velocity* Time.deltaTime;
+        }
+        if (distanceToFollow > distanceFloat && !enemyShoot && floorLevel == playerFloorLevel)
+        {
+            transform.position += velocity* Time.deltaTime;
+        }
+      
     }
+
 }

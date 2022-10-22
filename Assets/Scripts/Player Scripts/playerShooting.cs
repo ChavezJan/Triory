@@ -50,6 +50,8 @@ public class playerShooting : MonoBehaviour
 
     void FixedUpdate()
     {
+        float healthAmmo = pha.getHealthAmmo();
+
         if(Input.GetAxisRaw("Cancel") > 0)
         {
             pause.SetActive(true);
@@ -66,7 +68,7 @@ public class playerShooting : MonoBehaviour
 
         if(Input.GetAxisRaw("Fire1") > 0)
         {   
-            if(shootType == 2)
+            if(shootType == 2 && healthAmmo > 10)
             {
                 lineRenderer.enabled = true;
             }
