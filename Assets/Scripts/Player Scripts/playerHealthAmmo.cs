@@ -180,6 +180,13 @@ public class playerHealthAmmo : MonoBehaviour
         return healthAmmo;
     }
 
+    public void takeDamage(int hitDamage)
+    {
+
+        healthAmmo -= hitDamage;
+
+    }
+
     IEnumerator EnergyRecoveryCoroutine()
     {
         while (true)

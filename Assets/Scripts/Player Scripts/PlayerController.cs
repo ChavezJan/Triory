@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 moveDirection;      
 
+    public GameObject takeHit;
+
     // Update is called once per frame
     void Update()
     {
@@ -83,6 +85,11 @@ public class PlayerController : MonoBehaviour
     public int getLevel()
     {
         return floorLevel;
+    }
+
+    public void takePlayerHP(int hitPlayer)
+    {
+        takeHit.GetComponent<playerHealthAmmo>().takeDamage(hitPlayer);   
     }
 
 }

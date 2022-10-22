@@ -72,7 +72,11 @@ public class playerShooting : MonoBehaviour
             {
                 lineRenderer.enabled = true;
             }
+            if (healthAmmo > 10)
+            {
             Shoot();
+                
+            }
         }
         else
         {

@@ -41,9 +41,32 @@ public class EnemySeek : MonoBehaviour
         }
         if (distanceToFollow > distanceFloat && !enemyShoot && floorLevel == playerFloorLevel)
         {
-            transform.position += velocity* Time.deltaTime;
+            if(distanceFloat <7)
+            {
+                transform.position += (velocity* Time.deltaTime)*1.3f;
+            }
+            else
+            {
+                transform.position += velocity* Time.deltaTime;
+            }
         }
-      
     }
+
+    void OnTriggerEnter(Collider hitInfo) 
+    {
+
+
+        if(hitInfo.name == "pCone1")
+        {
+            Debug.Log(hitInfo.name);
+            
+            
+            target.GetComponent<PlayerController>().takePlayerHP(10);
+            
+            
+            Destroy(gameObject);   
+        }
+    }
+
 
 }
