@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":false,"pivot":{"x":0.0,"y":0.0,"z":-6.0},"rotation":{"x":0.3545607030391693,"y":0.20512111485004426,"z":-0.08003023266792298,"w":0.9087409377098084},"size":92.94982147216797,"orthographic":false}
+=======
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":false,"pivot":{"x":0.80937659740448,"y":10.261743545532227,"z":-27.258377075195314},"rotation":{"x":0.10331613570451737,"y":0.0014912397600710393,"z":-0.0001539787626825273,"w":0.9946514368057251},"size":11.602283477783204,"orthographic":false}
+>>>>>>> developsebas
