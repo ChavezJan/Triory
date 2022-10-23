@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
         return floorLevel;
     }
 
-    public void takePlayerHP(int hitPlayer)
+    public void takePlayerHP(float hitPlayer)
     {
         takeHit.GetComponent<playerHealthAmmo>().takeDamage(hitPlayer);   
     }

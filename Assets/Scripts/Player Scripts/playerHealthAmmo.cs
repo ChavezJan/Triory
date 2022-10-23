@@ -190,7 +190,7 @@ public class playerHealthAmmo : MonoBehaviour
         return healthAmmo;
     }
 
-    public void takeDamage(int hitDamage)
+    public void takeDamage(float hitDamage)
     {
 
         healthAmmo -= hitDamage;

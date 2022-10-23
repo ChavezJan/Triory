@@ -12,6 +12,10 @@ public class EnemySeek : MonoBehaviour
     public bool enemyShoot = false;
     public int floorLevel = 2;
 
+    public Transform firePoint;
+    public GameObject bullet;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +42,8 @@ public class EnemySeek : MonoBehaviour
         if (distanceToFollow > distanceFloat && distanceFloat > distanceToStop && enemyShoot && floorLevel == playerFloorLevel)
         {
             transform.position += velocity* Time.deltaTime;
+            shoot();
+
         }
         if (distanceToFollow > distanceFloat && !enemyShoot && floorLevel == playerFloorLevel)
         {
@@ -50,6 +56,10 @@ public class EnemySeek : MonoBehaviour
                 transform.position += velocity* Time.deltaTime;
             }
         }
+    }
+    void shoot()
+    {
+        Instantiate(bullet,firePoint.position,firePoint.rotation);
     }
 
     void OnTriggerEnter(Collider hitInfo) 
