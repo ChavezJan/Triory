@@ -58,8 +58,7 @@ public class EnemySeek : MonoBehaviour
 
         if(hitInfo.name == "pCone1")
         {
-            Debug.Log(hitInfo.name);
-            
+             
             
             target.GetComponent<PlayerController>().takePlayerHP(10);
             

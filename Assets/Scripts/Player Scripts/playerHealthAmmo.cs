@@ -37,6 +37,10 @@ public class playerHealthAmmo : MonoBehaviour
 
     void FixedUpdate() 
     {
+        if(healthAmmo<=0)
+        {
+            END();
+        }
         switch (levelOfHealthAmmo)
         {
         case 5:
@@ -114,6 +118,12 @@ public class playerHealthAmmo : MonoBehaviour
         Transform TP = triPlayer.transform;
         TP.localScale = new Vector3(range,range,range);
 
+    }
+
+    void END()
+    {
+        gameOver.SetActive(true);
+        Destroy(gameObject);
     }
 
     // tiene que ser llamada por el daño probocado por el enemigo y mandar el damage con el huit collider
