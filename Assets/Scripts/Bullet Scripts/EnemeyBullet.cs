@@ -9,6 +9,7 @@ public class EnemeyBullet : MonoBehaviour
     public float timeToDie = 5;
     public float distanceToDie = 100;
     public Rigidbody rb;
+    public GameObject[] Players;
     public GameObject Player;
 
     public Vector3 initialPoint;
@@ -16,7 +17,10 @@ public class EnemeyBullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Vector3 direction = (this.transform.position - Player.transform.position).normalized;
+        Players = GameObject.FindGameObjectsWithTag("Player");
+        Player = Players[0];
+        Vector3 direction = (Player.transform.position - this.transform.position).normalized;
+        Debug.Log(direction);
         rb.velocity = direction * bulletSpeed;
         initialPoint = gameObject.transform.position;
     }
